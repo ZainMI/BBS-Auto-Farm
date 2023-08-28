@@ -16,10 +16,7 @@ pip install opencv-python
 
 # New To Programming?
 **Installation Guide for Windows (If already installed skip to step 7)**
-1. If you dont have `Git for Windows` installed download it from here
-   ```
-   https://gitforwindows.org/
-   ```
+1. If you dont have [Git for Windows](https://gitforwindows.org/) installed download it from here
 2. Once Git for Windows is installed, press the Windows button and type `Git CMD` then press enter
 3. Once in the terminal, paste these commands
    ```
