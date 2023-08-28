@@ -36,7 +36,7 @@ pip install opencv-python
       1. Type `python` to bring you to the Microsoft store and install Python
 5. Once Python is installed paste these into the terminal
    ```
-   pip insatll pyautogui
+   pip install pyautogui
    pip install opencv-python
    ```
 6. To run paste this into terminal
