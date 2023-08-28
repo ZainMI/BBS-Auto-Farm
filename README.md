@@ -27,10 +27,12 @@ pip install opencv-python
    cd github
    git clone https://github.com/ZainMI/BBS-Auto-Farm.git
    cd BBS-Auto-Farm
+   
    ```
 4. Paste this into terminal
    ```
    python --version
+   
    ```
    1. If you get this error `Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.`
       1. Type `python` to bring you to the Microsoft store and install Python
@@ -38,10 +40,12 @@ pip install opencv-python
    ```
    pip install pyautogui
    pip install opencv-python
+   
    ```
 6. To run paste this into terminal
    ```
    python3 auto.py
+   
    ```
 7. If BBS Auto Farm is already installed paste these into terminal
    1. Press the Windows button and type `Git CMD` then press enter
@@ -49,6 +53,7 @@ pip install opencv-python
       ```
       cd github/BBS-Auto-Farm
       python3 auto.py
+      
       ```
 
 **Installation Guide for Linux (If already installed skip to step 5)**
@@ -57,6 +62,7 @@ pip install opencv-python
    1. If you don't have `git` installed paste this then type your password and press `y` when prompted
       ```
       sudo apt install git
+      
       ```
    2. Once git is installed
       ```
@@ -64,23 +70,28 @@ pip install opencv-python
       cd github
       git clone https://github.com/ZainMI/BBS-Auto-Farm.git
       cd BBS-Auto-Farm
+      
       ```
 3. Paste these into terminal
    1. If you don't have `pip` installed paste this then type your password and press `y` when prompted
       ```
       sudo apt install python3-pip
+      
       ```
    2. Once pip is installed
       ```
       pip install pyautogui
-      pip install opencv-python   
+      pip install opencv-python
+      
       ```
 4. To run paste this into terminal
    ```
    python3 auto.py
+   
    ```
 5. If BBS Auto Farm is already installed paste these into terminal
    ```
    cd github/BBS-Auto-Farm
    python3 auto.py
+   
    ```
