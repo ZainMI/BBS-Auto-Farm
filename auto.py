@@ -1,3 +1,4 @@
+import time
 import pyautogui
 
 
@@ -36,6 +37,7 @@ def farm(max_orbs, cont):
         elif continues != None and cont == "y":
             continues = pyautogui.center(continues)
             pyautogui.click(continues)
+        time.sleep(5)
 
 
 quest = "this is placement text"
