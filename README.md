@@ -36,8 +36,11 @@ pip install opencv-python
    python --version
    
    ```
-   1. If you get this error `Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.`
-      1. Type `python` to bring you to the Microsoft store and install Python
+   1. If you get this output
+      
+      `Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.`
+      
+      Type `python` then press enter to bring you to the Microsoft store and install Python
 5. Once Python is installed paste these into the terminal
    ```
    pip install pyautogui
@@ -46,7 +49,7 @@ pip install opencv-python
    ```
 6. To run paste this into terminal
    ```
-   python3 auto.py
+   python auto.py
    
    ```
 7. If BBS Auto Farm is already installed paste these into terminal
@@ -54,7 +57,7 @@ pip install opencv-python
    2. Paste these into the terminal
       ```
       cd github/BBS-Auto-Farm
-      python3 auto.py
+      python auto.py
       
       ```
 
