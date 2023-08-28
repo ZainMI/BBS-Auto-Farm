@@ -9,6 +9,7 @@ To run this you must be able to run python files on your computer
 ```
 pip install pyautogui
 pip install opencv-python
+pip install pysimplegui
 
 ```
 
@@ -45,6 +46,7 @@ pip install opencv-python
    ```
    pip install pyautogui
    pip install opencv-python
+   pip install pysimplegui
    
    ```
 6. To run paste this into terminal
@@ -87,6 +89,7 @@ pip install opencv-python
       ```
       pip install pyautogui
       pip install opencv-python
+      pip install pysimplegui
       
       ```
 4. To run paste this into terminal
