@@ -1,5 +1,6 @@
 # BBS-Auto-Farm
 To run this you must be able to run python files on your computer
+**Bleach Brave Souls MUST be in 1600x900 aspect ratio in order for the images to be located**
 
 **Ensure you have the proper python packages:**
 ```
@@ -46,7 +47,7 @@ pip install opencv-python
    
    ```
 7. If BBS Auto Farm is already installed paste these into terminal
-   1. Press the Windows button and type `Git CMD` then press enter
+   1. Open `Git CMD`
    2. Paste these into the terminal
       ```
       cd github/BBS-Auto-Farm
