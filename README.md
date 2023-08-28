@@ -1,7 +1,9 @@
 # BBS-Auto-Farm
-To run this you must be able to run python files on your computer
 
 **Bleach Brave Souls MUST be in 1600x900 aspect ratio in order for the images to be located**
+
+To run this you must be able to run python files on your computer
+
 
 **Ensure you have the proper python packages:**
 ```
