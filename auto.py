@@ -46,8 +46,6 @@ def farm(max_orbs, cont):
 
         if cancelTimer:
             time.sleep(720)
-        else:
-            time.sleep(5)
 
 
 quest = "this is placement text"
