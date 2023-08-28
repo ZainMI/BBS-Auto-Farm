@@ -5,6 +5,7 @@ import pyautogui
 def farm(max_orbs, cont):
     orbs_used = 0
     while True:
+        cancelTimer = False
         start_quest = pyautogui.locateOnScreen("start_quest.png", confidence=0.8)
         retry = pyautogui.locateOnScreen("retry.png", confidence=0.8)
         tap_screen = pyautogui.locateOnScreen("tap_screen.png", confidence=0.8)
@@ -13,12 +14,17 @@ def farm(max_orbs, cont):
         result_screen = pyautogui.locateOnScreen("result_screen.png", confidence=0.8)
         continues = pyautogui.locateOnScreen("continue.png", confidence=0.8)
         buying = pyautogui.locateOnScreen("buying.png", confidence=0.8)
-        if purchase != None and buying != None:
+        cancel = pyautogui.locateOnScreen("cancel.png", confidence=0.8)
+        if purchase != None and buying != None and max_orbs != -1:
             if orbs_used + 5 > max_orbs:
                 return "Finished"
             orbs_used += 5
             purchase = pyautogui.center(purchase)
             pyautogui.click(purchase)
+        if max_orbs == -1 and cancel != None and purchase != None:
+            cancel = pyautogui.center(cancel)
+            pyautogui.click(cancel)
+            cancelTimer = True
         elif start_quest != None:
             start_quest = pyautogui.center(start_quest)
             pyautogui.click(start_quest)
@@ -37,7 +43,11 @@ def farm(max_orbs, cont):
         elif continues != None and cont == "y":
             continues = pyautogui.center(continues)
             pyautogui.click(continues)
-        time.sleep(5)
+
+        if cancelTimer:
+            time.sleep(720)
+        else:
+            time.sleep(5)
 
 
 quest = "this is placement text"
@@ -45,8 +55,13 @@ while quest == "this is placement text":
     print("Welcome to BBS Auto Farm!\nPress enter to continue")
     quest = input()
 
-print("What is the maximum amount of orbs you would like to spend?")
+print(
+    "What is the maximum amount of orbs you would like to spend? (Enter -1 if you want to wait for tickets to recharge)"
+)
 max_orbs = int(input("Enter max number of orbs: "))
 cont = input("Would you like to use revival candles? (y/n): ")
-print("Starting BBS Auto Farm!")
-print(farm(max_orbs, cont))
+print("Starting BBS Auto Farm! Press Ctrl+C to stop at any time.")
+try:
+    print(farm(max_orbs, cont))
+except:
+    print("Stopped")
