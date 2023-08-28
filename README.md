@@ -5,6 +5,7 @@ To run this you must be able to run python files on your computer
 ```
 pip install pyautogui
 pip install opencv-python
+
 ```
 
 **Once Everything is installed:**
