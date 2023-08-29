@@ -6,7 +6,6 @@ import PySimpleGUI as sg
 def quest(max_orbs, cont):
     orbs_used = 0
     while True:
-        cancelTimer = False
         start_quest = pyautogui.locateCenterOnScreen("start_quest.png", confidence=0.8)
         retry = pyautogui.locateCenterOnScreen("retry.png", confidence=0.8)
         tap_screen = pyautogui.locateCenterOnScreen("tap_screen.png", confidence=0.8)
@@ -24,9 +23,9 @@ def quest(max_orbs, cont):
                 return "Finished"
             orbs_used += 5
             pyautogui.click(purchase)
-        if max_orbs == -1 and cancel != None and purchase != None:
+        elif max_orbs == -1 and cancel != None and purchase != None:
             pyautogui.click(cancel)
-            cancelTimer = True
+            time.sleep(720)
         elif start_quest != None:
             pyautogui.click(start_quest)
         elif retry != None:
@@ -41,9 +40,6 @@ def quest(max_orbs, cont):
             pyautogui.click(continues)
         elif auto != None:
             pyautogui.click(auto)
-
-        if cancelTimer:
-            time.sleep(720)
 
 
 def checkTickets():
@@ -67,20 +63,29 @@ def checkTickets():
 
 def coop(max_orbs, cont):
     orbs_used = 0
+    death_time = None
     while True:
-        create_room = pyautogui.locateCenterOnScreen("create_room.png", confidence=0.8)
-        public = pyautogui.locateCenterOnScreen("public.png", confidence=0.8)
-        open_slot = pyautogui.locateCenterOnScreen("slot.png", confidence=0.8)
+        continues = pyautogui.locateCenterOnScreen("continue.png", confidence=0.8)
         tap_here_screen = pyautogui.locateCenterOnScreen(
             "tap_here_to_continue.png", confidence=0.8
         )
+        if death_time != None and time.time() - death_time > 300 and continues != None:
+            death_time = None
+            pyautogui.click(continues)
+            continue
+        elif tap_here_screen != None:
+            pyautogui.click(tap_here_screen)
+            continue
+        elif death_time != None and time.time() - death_time < 300:
+            continue
+        create_room = pyautogui.locateCenterOnScreen("create_room.png", confidence=0.8)
+        public = pyautogui.locateCenterOnScreen("public.png", confidence=0.8)
+        open_slot = pyautogui.locateCenterOnScreen("slot.png", confidence=0.8)
         retry = pyautogui.locateCenterOnScreen("retry.png", confidence=0.8)
         auto = pyautogui.locateCenterOnScreen("auto.png", confidence=0.95)
-        continues = pyautogui.locateCenterOnScreen("continue.png", confidence=0.8)
         start_coop = pyautogui.locateCenterOnScreen("start_coop.png", confidence=0.8)
         confirm = pyautogui.locateCenterOnScreen("confirm.png", confidence=0.8)
         not_enough_members = pyautogui.locateCenterOnScreen("not_enough_members.png")
-        close = pyautogui.locateCenterOnScreen("close.png", confidence=0.8)
         tap_screen = pyautogui.locateCenterOnScreen("tap_screen.png", confidence=0.8)
         result_screen = pyautogui.locateCenterOnScreen(
             "result_screen.png", confidence=0.8
@@ -88,7 +93,6 @@ def coop(max_orbs, cont):
         players_not_ready = pyautogui.locateCenterOnScreen(
             "players_not_ready.png", confidence=0.8
         )
-        cancel = pyautogui.locateCenterOnScreen("cancel.png", confidence=0.8)
         purchase = pyautogui.locateCenterOnScreen("buying.png", confidence=0.8)
 
         if purchase != None and create_room != None and max_orbs != -1:
@@ -96,15 +100,24 @@ def coop(max_orbs, cont):
                 return "Finished"
             pyautogui.click(create_room)
             orbs_used += 1
-        elif max_orbs == -1 and cancel != None and purchase != None:
+        elif max_orbs == -1 and purchase != None:
+            cancel = None
+            while cancel == None:
+                cancel = pyautogui.locateCenterOnScreen("cancel.png", confidence=0.8)
             pyautogui.click(cancel)
             time.sleep(720)
         elif create_room != None:
             pyautogui.click(create_room)
             checkTickets()
-        elif not_enough_members != None and close != None:
+        elif not_enough_members != None:
+            close = None
+            while close == None:
+                close = pyautogui.locateCenterOnScreen("close.png", confidence=0.8)
             pyautogui.click(close)
-        elif players_not_ready != None and cancel != None:
+        elif players_not_ready != None:
+            cancel = None
+            while cancel == None:
+                cancel = pyautogui.locateCenterOnScreen("cancel.png", confidence=0.8)
             pyautogui.click(cancel)
         elif public != None:
             pyautogui.click(public)
@@ -116,6 +129,8 @@ def coop(max_orbs, cont):
             pyautogui.click(tap_here_screen)
         elif continues != None and cont:
             pyautogui.click(continues)
+        elif continues != None and not cont:
+            death_time = time.time()
         elif auto != None:
             pyautogui.click(auto)
         elif confirm != None:
