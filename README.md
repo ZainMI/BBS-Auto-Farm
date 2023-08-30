@@ -26,7 +26,7 @@ pip install pysimplegui
 ### Installation Guide for Windows
 #### Download the setup exe from the releases
 
-1. Go to the `Releases` page located on the right of the screen
+1. Go to the `Releases` page located on the right of the screen at the [home page](https://github.com/ZainMI/BBS-Auto-Farm)
    
    ![releases.png](https://github.com/ZainMI/BBS-Auto-Farm/blob/main/script/img/releases.png)
 2. Download the latest BBS-Auto-Farm-setup.exe (don't worry, it's safe)
