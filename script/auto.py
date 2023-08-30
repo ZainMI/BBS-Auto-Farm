@@ -71,21 +71,11 @@ def checkTickets():
 
 def coop(max_orbs, cont):
     orbs_used = 0
-    death_time = None
     while True:
         continues = pyautogui.locateCenterOnScreen("./img/continue.png", confidence=0.8)
         tap_here_screen = pyautogui.locateCenterOnScreen(
             "./img/tap_here_to_continue.png", confidence=0.8
         )
-        if death_time != None and time.time() - death_time > 300 and continues != None:
-            death_time = None
-            pyautogui.click(continues)
-            continue
-        elif tap_here_screen != None:
-            pyautogui.click(tap_here_screen)
-            continue
-        elif death_time != None and time.time() - death_time < 300:
-            continue
         create_room = pyautogui.locateCenterOnScreen(
             "./img/create_room.png", confidence=0.8
         )
@@ -151,8 +141,6 @@ def coop(max_orbs, cont):
             pyautogui.click(tap_here_screen)
         elif continues != None and cont:
             pyautogui.click(continues)
-        elif continues != None and not cont:
-            death_time = time.time()
         elif auto != None:
             pyautogui.click(auto)
         elif confirm != None:
@@ -324,7 +312,7 @@ while True:
         current_layout = "coop_layout_orbs"
 
 window.close()
-print("Press Ctrl+C or close this window to stop")
+print("Press Ctrl+C or close this window to stop BBS Auto Farm")
 
 try:
     if play_quest:
@@ -334,6 +322,7 @@ try:
 except KeyboardInterrupt as k:
     print("Stopped")
     print("Thanks for using BBS Auto Farm!")
+    print("Closing")
     time.sleep(5)
 except Exception as e:
     print(e)
