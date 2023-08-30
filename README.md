@@ -5,7 +5,7 @@
 ### Features
 * Auto Farm any Quest
 * Auto Farm any Co-op Quest
-   * If you choose not to use candles for Co-op quest, if the quest is not completed within 10 minuets of your death a candle will be used in order to keep the cycle going
+   * Co-op will only use all your tickets because you cannot buy tickets from the room
 
 ### Once Everything is installed:
 1. Find the quest you want to farm
