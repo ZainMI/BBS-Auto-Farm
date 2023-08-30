@@ -7,15 +7,6 @@
 * Auto Farm any Co-op Quest
    * If you choose not to use candles for Co-op quest, if the quest is not completed within 10 minuets of your death a candle will be used in order to keep the cycle going
 
-### Ensure you have the proper python packages:
-To run this you must be able to run python files on your computer
-```
-pip install pyautogui
-pip install opencv-python
-pip install pysimplegui
-
-```
-
 ### Once Everything is installed:
 1. Find the quest you want to farm
 2. Go to the prepare for quest page
