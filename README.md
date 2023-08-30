@@ -19,12 +19,23 @@ pip install pysimplegui
 ### Once Everything is installed:
 1. Find the quest you want to farm
 2. Go to the prepare for quest page
-3. Run auto.py
-5. Follow command line GUI
-6. Once it says "Starting BBS Auto Farm" navigate to Bleach Brave Souls and AFK
+3. Open BBS Auto Farm and follow the GUI
+4. Start Farming
 
-## New To Programming?
-### Installation Guide for Windows (If already installed skip to step 7)
+## Installation Guides
+### Installation Guide for Windows
+#### Download the setup exe from the releases
+
+1. Go to the `Releases` page located on the right of the screen
+   
+   ![releases.png](https://github.com/ZainMI/BBS-Auto-Farm/blob/main/script/img/releases.png)
+2. Download the latest BBS-Auto-Farm-setup.exe (don't worry, it's safe)
+
+   ![setup_exe.png](https://github.com/ZainMI/BBS-Auto-Farm/blob/main/script/img/setup_exe.png)
+
+ ### OR
+
+ #### Download from github (Skip to step 7 is allready downloaded)
 1. If you dont have [Git for Windows](https://gitforwindows.org/) installed download it from here
 2. Once Git for Windows is installed, launch the `Git CMD` app
 3. Once in the terminal, paste these commands
