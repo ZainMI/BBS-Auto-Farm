@@ -32,7 +32,7 @@ pip install pysimplegui
 2. Download the latest BBS-Auto-Farm-setup.exe (don't worry, it's safe)
 
    ![setup_exe.png](https://github.com/ZainMI/BBS-Auto-Farm/blob/main/script/img/setup_exe.png)
-
+3. Run BBS Auto Farm
  ### OR
 
  #### Download from github (Skip to step 7 is allready downloaded)
