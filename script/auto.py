@@ -100,6 +100,9 @@ def coop(max_orbs, cont):
             "./img/players_not_ready.png", confidence=0.8
         )
         purchase = pyautogui.locateCenterOnScreen("./img/buying.png", confidence=0.8)
+        assist_point = pyautogui.locateCenterOnScreen(
+            "./img/assist_point.png", confidence=0.8
+        )
 
         if purchase != None and create_room != None and max_orbs != -1:
             if orbs_used + 1 > max_orbs:
@@ -149,6 +152,13 @@ def coop(max_orbs, cont):
             pyautogui.click(tap_screen)
         elif result_screen != None:
             pyautogui.click(result_screen)
+        elif assist_point != None:
+            close = None
+            while close == None:
+                close = pyautogui.locateCenterOnScreen(
+                    "./img/close.png", confidence=0.8
+                )
+            pyautogui.click(close)
 
 
 sg.theme("LightGreen2")
