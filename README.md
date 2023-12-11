@@ -1,4 +1,4 @@
-# BBS-Auto-Farm
+# BBS-Auto-Farm (Working on the new update)
 
 ### Bleach Brave Souls MUST be in 1600x900 aspect ratio in order for the images to be located
 
