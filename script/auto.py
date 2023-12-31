@@ -2,26 +2,62 @@ import time
 import pyautogui
 import PySimpleGUI as sg
 
+pyautogui.useImageNotFoundException()
+
 
 def quest(max_orbs, cont):
     orbs_used = 0
     while True:
-        start_quest = pyautogui.locateCenterOnScreen(
-            "./img/start_quest.png", confidence=0.8
-        )
-        retry = pyautogui.locateCenterOnScreen("./img/retry.png", confidence=0.8)
-        tap_screen = pyautogui.locateCenterOnScreen(
-            "./img/tap_screen.png", confidence=0.8
-        )
-        close = pyautogui.locateCenterOnScreen("./img/close.png", confidence=0.8)
-        purchase = pyautogui.locateCenterOnScreen("./img/purchase.png", confidence=0.8)
-        result_screen = pyautogui.locateCenterOnScreen(
-            "./img/result_screen.png", confidence=0.8
-        )
-        continues = pyautogui.locateCenterOnScreen("./img/continue.png", confidence=0.8)
-        buying = pyautogui.locateCenterOnScreen("./img/buying.png", confidence=0.8)
-        cancel = pyautogui.locateCenterOnScreen("./img/cancel.png", confidence=0.8)
-        auto = pyautogui.locateCenterOnScreen("./img/auto.png", confidence=0.95)
+        try:
+            start_quest = pyautogui.locateCenterOnScreen(
+                "./img/start_quest.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            start_quest = None
+        try:
+            retry = pyautogui.locateCenterOnScreen("./img/retry.png", confidence=0.8)
+        except pyautogui.ImageNotFoundException:
+            retry = None
+        try:
+            tap_screen = pyautogui.locateCenterOnScreen(
+                "./img/tap_screen.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            tap_screen = None
+        try:
+            close = pyautogui.locateCenterOnScreen("./img/close.png", confidence=0.8)
+        except pyautogui.ImageNotFoundException:
+            close = None
+        try:
+            purchase = pyautogui.locateCenterOnScreen(
+                "./img/purchase.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            purchase = None
+        try:
+            result_screen = pyautogui.locateCenterOnScreen(
+                "./img/result_screen.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            result_screen = None
+        try:
+            continues = pyautogui.locateCenterOnScreen(
+                "./img/continue.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            continues = None
+        try:
+            buying = pyautogui.locateCenterOnScreen("./img/buying.png", confidence=0.8)
+        except pyautogui.ImageNotFoundException:
+            buying = None
+        try:
+            cancel = pyautogui.locateCenterOnScreen("./img/cancel.png", confidence=0.8)
+        except pyautogui.ImageNotFoundException:
+            cancel = None
+        try:
+            auto = pyautogui.locateCenterOnScreen("./img/auto.png", confidence=0.95)
+        except pyautogui.ImageNotFoundException:
+            auto = None
         if purchase != None and buying != None and max_orbs != -1:
             if orbs_used + 5 > max_orbs:
                 return "Finished"
@@ -48,15 +84,32 @@ def quest(max_orbs, cont):
 
 def checkTickets():
     while True:
-        close = pyautogui.locateCenterOnScreen("./img/close.png", confidence=0.8)
-        gift = pyautogui.locateCenterOnScreen("./img/gift.png", confidence=0.8)
-        start_coop = pyautogui.locateCenterOnScreen(
-            "./img/start_coop.png", confidence=0.8
-        )
-        not_enough_members = pyautogui.locateCenterOnScreen(
-            "./img/not_enough_members.png"
-        )
-        purchase = pyautogui.locateCenterOnScreen("./img/buying.png", confidence=0.8)
+        try:
+            close = pyautogui.locateCenterOnScreen("./img/close.png", confidence=0.8)
+        except pyautogui.ImageNotFoundException:
+            close = None
+        try:
+            gift = pyautogui.locateCenterOnScreen("./img/gift.png", confidence=0.8)
+        except pyautogui.ImageNotFoundException:
+            gift = None
+        try:
+            start_coop = pyautogui.locateCenterOnScreen(
+                "./img/start_coop.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            start_coop = None
+        try:
+            not_enough_members = pyautogui.locateCenterOnScreen(
+                "./img/not_enough_members.png"
+            )
+        except pyautogui.ImageNotFoundException:
+            not_enough_members = None
+        try:
+            purchase = pyautogui.locateCenterOnScreen(
+                "./img/buying.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            purchase = None
         if purchase != None:
             return
         if close != None and gift != None:
@@ -72,38 +125,88 @@ def checkTickets():
 def coop(max_orbs, cont):
     orbs_used = 0
     while True:
-        continues = pyautogui.locateCenterOnScreen("./img/continue.png", confidence=0.8)
-        tap_here_screen = pyautogui.locateCenterOnScreen(
-            "./img/tap_here_to_continue.png", confidence=0.8
-        )
-        create_room = pyautogui.locateCenterOnScreen(
-            "./img/create_room.png", confidence=0.8
-        )
-        public = pyautogui.locateCenterOnScreen("./img/public.png", confidence=0.8)
-        open_slot = pyautogui.locateCenterOnScreen("./img/slot.png", confidence=0.8)
-        retry = pyautogui.locateCenterOnScreen("./img/retry.png", confidence=0.8)
-        auto = pyautogui.locateCenterOnScreen("./img/auto.png", confidence=0.95)
-        start_coop = pyautogui.locateCenterOnScreen(
-            "./img/start_coop.png", confidence=0.8
-        )
-        confirm = pyautogui.locateCenterOnScreen("./img/confirm.png", confidence=0.8)
-        not_enough_members = pyautogui.locateCenterOnScreen(
-            "./img/not_enough_members.png"
-        )
-        tap_screen = pyautogui.locateCenterOnScreen(
-            "./img/tap_screen.png", confidence=0.8
-        )
-        result_screen = pyautogui.locateCenterOnScreen(
-            "./img/result_screen.png", confidence=0.8
-        )
-        players_not_ready = pyautogui.locateCenterOnScreen(
-            "./img/players_not_ready.png", confidence=0.8
-        )
-        purchase = pyautogui.locateCenterOnScreen("./img/buying.png", confidence=0.8)
-        assist_point = pyautogui.locateCenterOnScreen(
-            "./img/assist_point.png", confidence=0.8
-        )
-
+        try:
+            continues = pyautogui.locateCenterOnScreen(
+                "./img/continue.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            continues = None
+        try:
+            tap_here_screen = pyautogui.locateCenterOnScreen(
+                "./img/tap_here_to_continue.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            tap_here_screen = None
+        try:
+            create_room = pyautogui.locateCenterOnScreen(
+                "./img/create_room.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            create_room = None
+        try:
+            public = pyautogui.locateCenterOnScreen("./img/public.png", confidence=0.8)
+        except pyautogui.ImageNotFoundException:
+            public = None
+        try:
+            open_slot = pyautogui.locateCenterOnScreen("./img/slot.png", confidence=0.8)
+        except pyautogui.ImageNotFoundException:
+            open_slot = None
+        try:
+            retry = pyautogui.locateCenterOnScreen("./img/retry.png", confidence=0.8)
+        except pyautogui.ImageNotFoundException:
+            retry = None
+        try:
+            auto = pyautogui.locateCenterOnScreen("./img/auto.png", confidence=0.95)
+        except pyautogui.ImageNotFoundException:
+            auto = None
+        try:
+            start_coop = pyautogui.locateCenterOnScreen(
+                "./img/start_coop.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            start_coop = None
+        try:
+            confirm = pyautogui.locateCenterOnScreen(
+                "./img/confirm.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            confirm = None
+        try:
+            not_enough_members = pyautogui.locateCenterOnScreen(
+                "./img/not_enough_members.png"
+            )
+        except pyautogui.ImageNotFoundException:
+            not_enough_members = None
+        try:
+            tap_screen = pyautogui.locateCenterOnScreen(
+                "./img/tap_screen.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            tap_screen = None
+        try:
+            result_screen = pyautogui.locateCenterOnScreen(
+                "./img/result_screen.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            result_screen = None
+        try:
+            players_not_ready = pyautogui.locateCenterOnScreen(
+                "./img/players_not_ready.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            players_not_ready = None
+        try:
+            purchase = pyautogui.locateCenterOnScreen(
+                "./img/buying.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            purchase = None
+        try:
+            assist_point = pyautogui.locateCenterOnScreen(
+                "./img/assist_point.png", confidence=0.8
+            )
+        except pyautogui.ImageNotFoundException:
+            assist_point = None
         if purchase != None and create_room != None and max_orbs != -1:
             if orbs_used + 1 > max_orbs:
                 return "Finished"
@@ -230,7 +333,7 @@ running_layout = [
 ]
 
 orbs = 0
-play_quest = False
+play_quest = True
 play_coop = False
 
 layout = (
@@ -246,87 +349,87 @@ layout = (
     ],
 )
 
-window = sg.Window(
-    "BBS Auto Farm",
-    layout,
-    element_justification="c",
-    margins=(100, 50),
-)
+# window = sg.Window(
+#     "BBS Auto Farm",
+#     layout,
+#     element_justification="c",
+#     margins=(100, 50),
+# )
+#
+# current_layout = "start_layout"
+# while True:
+#     event, values = window.read()
+#     if event == sg.WIN_CLOSED or event == "Cancel":
+#         break
+#     elif event == "Quest":
+#         play_quest = True
+#         window[current_layout].update(visible=False)
+#         window["quest_layout_orbs"].update(visible=True)
+#         current_layout = "quest_layout_orbs"
+#     elif event == "Co-op":
+#         play_coop = True
+#         window[current_layout].update(visible=False)
+#         window["coop_layout_orbs"].update(visible=True)
+#         current_layout = "coop_layout_orbs"
+#     elif event == "quest_orbs_next":
+#         orbs = int(values[0])
+#         window[current_layout].update(visible=False)
+#         window["quest_layout_cont"].update(visible=True)
+#         current_layout = "quest_layout_cont"
+#     elif event == "quest_orbs_back":
+#         orbs = 0
+#         window[current_layout].update(visible=False)
+#         window["start_layout"].update(visible=True)
+#         current_layout = "start_layout"
+#     elif event == "quest_cont_back":
+#         window[current_layout].update(visible=False)
+#         window["quest_layout_orbs"].update(visible=True)
+#         current_layout = "quest_layout_orbs"
+#     elif event == "coop_cont_back":
+#         window[current_layout].update(visible=False)
+#         window["start_layout"].update(visible=True)
+#         current_layout = "start_layout"
+#     elif event == "coop_cont_yes":
+#         cont = True
+#         window[current_layout].update(visible=False)
+#         window["running_layout"].update(visible=True)
+#         current_layout = "running_layout"
+#     elif event == "coop_cont_no":
+#         cont = False
+#         window[current_layout].update(visible=False)
+#         window["running_layout"].update(visible=True)
+#         current_layout = "running_layout"
+#     elif event == "quest_cont_yes":
+#         cont = True
+#         window[current_layout].update(visible=False)
+#         window["running_layout"].update(visible=True)
+#         current_layout = "running_layout"
+#     elif event == "quest_cont_no":
+#         cont = False
+#         window[current_layout].update(visible=False)
+#         window["running_layout"].update(visible=True)
+#         current_layout = "running_layout"
+#     elif event == "coop_orbs_back":
+#         orbs = 0
+#         window[current_layout].update(visible=False)
+#         window["start_layout"].update(visible=True)
+#         current_layout = "start_layout"
+#     elif event == "coop_orbs_next":
+#         orbs = int(values[1])
+#         window[current_layout].update(visible=False)
+#         window["coop_layout_cont"].update(visible=True)
+#         current_layout = "coop_layout_cont"
+#     elif event == "coop_cont_back":
+#         window[current_layout].update(visible=False)
+#         window["coop_layout_orbs"].update(visible=True)
+#         current_layout = "coop_layout_orbs"
 
-current_layout = "start_layout"
-while True:
-    event, values = window.read()
-    if event == sg.WIN_CLOSED or event == "Cancel":
-        break
-    elif event == "Quest":
-        play_quest = True
-        window[current_layout].update(visible=False)
-        window["quest_layout_orbs"].update(visible=True)
-        current_layout = "quest_layout_orbs"
-    elif event == "Co-op":
-        play_coop = True
-        window[current_layout].update(visible=False)
-        window["coop_layout_orbs"].update(visible=True)
-        current_layout = "coop_layout_orbs"
-    elif event == "quest_orbs_next":
-        orbs = int(values[0])
-        window[current_layout].update(visible=False)
-        window["quest_layout_cont"].update(visible=True)
-        current_layout = "quest_layout_cont"
-    elif event == "quest_orbs_back":
-        orbs = 0
-        window[current_layout].update(visible=False)
-        window["start_layout"].update(visible=True)
-        current_layout = "start_layout"
-    elif event == "quest_cont_back":
-        window[current_layout].update(visible=False)
-        window["quest_layout_orbs"].update(visible=True)
-        current_layout = "quest_layout_orbs"
-    elif event == "coop_cont_back":
-        window[current_layout].update(visible=False)
-        window["start_layout"].update(visible=True)
-        current_layout = "start_layout"
-    elif event == "coop_cont_yes":
-        cont = True
-        window[current_layout].update(visible=False)
-        window["running_layout"].update(visible=True)
-        current_layout = "running_layout"
-    elif event == "coop_cont_no":
-        cont = False
-        window[current_layout].update(visible=False)
-        window["running_layout"].update(visible=True)
-        current_layout = "running_layout"
-    elif event == "quest_cont_yes":
-        cont = True
-        window[current_layout].update(visible=False)
-        window["running_layout"].update(visible=True)
-        current_layout = "running_layout"
-    elif event == "quest_cont_no":
-        cont = False
-        window[current_layout].update(visible=False)
-        window["running_layout"].update(visible=True)
-        current_layout = "running_layout"
-    elif event == "coop_orbs_back":
-        orbs = 0
-        window[current_layout].update(visible=False)
-        window["start_layout"].update(visible=True)
-        current_layout = "start_layout"
-    elif event == "coop_orbs_next":
-        orbs = int(values[1])
-        window[current_layout].update(visible=False)
-        window["coop_layout_cont"].update(visible=True)
-        current_layout = "coop_layout_cont"
-    elif event == "coop_cont_back":
-        window[current_layout].update(visible=False)
-        window["coop_layout_orbs"].update(visible=True)
-        current_layout = "coop_layout_orbs"
-
-window.close()
+# window.close()
 print("Press Ctrl+C or close this window to stop BBS Auto Farm")
-
+cont = False
 try:
     if play_quest:
-        print(quest(orbs, cont))
+        print(quest(-1, cont))
     elif play_coop:
         print(coop(orbs, cont))
 except KeyboardInterrupt as k:
