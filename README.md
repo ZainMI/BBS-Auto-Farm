@@ -1,5 +1,9 @@
 # BBS-Auto-Farm
 
+
+https://github.com/user-attachments/assets/dd58561e-d3b3-417c-9a65-4107d492e2a9
+
+
 ### Bleach Brave Souls MUST be in 1600x900 aspect ratio in order for the images to be located
 
 ### Features
